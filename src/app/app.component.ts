@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'ns-root',
+  selector: 'pr-root',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './app.component.html',
