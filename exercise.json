@@ -1,10 +1,1 @@
-{
-  "pack": "64",
-  "id": 3,
-  "title": "List of races",
-  "specs": [
-    { "name": "src/app/app.component.spec.ts", "hash": "81fa40ff3cde26c799f9e853eee0c3d8986d41cdacb1d536c947e331634008ed" },
-    { "name": "src/app/races/races.component.spec.ts", "hash": "9217887be3ac4523690643a5d18993907e49d11a36183a80396c2e25b6498c3e" },
-    { "name": "cypress/e2e/home.cy.ts", "hash": "2c34079a36c67626d1923bc53a504bdfb6677823b04b3265a240ffe97f9fbe82" }
-  ]
-}
+{"pack":"64","id":4,"title":"Race detail","specs":[{"name":"src/app/races/races.component.spec.ts","hash":"6f5fa64734cfe9080303d9b9a9d73fe197dc83648efc15d633e13dd8887c1b90"},{"name":"src/app/race/race.component.spec.ts","hash":"6702d8a17d77e768e0649e466599a8074da2804186f305649b0b1468a75c5a25"},{"name":"cypress/e2e/home.cy.ts","hash":"65eb3967eb220d0de0143d612114c956a011e51fedf2eb61fcbf9a395414c953"}]}
