@@ -1,1 +1,10 @@
-{"pack":"64","id":0,"title":"Getting started","specs":[{"name":"src/app/app.component.spec.ts","hash":"2cca0048693142736bd8ba852220a3616f57f15dfab2f80f2fb8905a385000be"},{"name":"cypress/e2e/home.cy.ts","hash":"bb9842c85d1c19603b1d45c148ee10b1ef44f1f9c71c6c982217aabf5f504bda"}]}
+{
+  "pack": "64",
+  "id": 2,
+  "title": "Templates",
+  "specs": [
+    { "name": "src/app/app.component.spec.ts", "hash": "a2f9363ddeb641540f92f1b8d269390760647cc90f5638d563f39ebd6bbc698b" },
+    { "name": "src/app/menu/menu.component.spec.ts", "hash": "fe7fa0d31e3ffd7d8b924846ecc4dc809a1c24e6f02eda54fd66d0cf2dca247b" },
+    { "name": "cypress/e2e/home.cy.ts", "hash": "87be1e08666f4c01f88cd4559ae9d594b3781e53120b8ae081112f01489b1027" }
+  ]
+}
