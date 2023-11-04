@@ -1,8 +1,4 @@
-interface PonyModel {
-  id: number;
-  name: string;
-  color: string;
-}
+import { PonyModel } from './pony.model';
 
 export default interface RaceModel {
   id: number;
