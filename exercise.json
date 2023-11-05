@@ -1,9 +1,1 @@
-{
-  "pack": "64",
-  "id": 6,
-  "title": "Using pipes",
-  "specs": [
-    { "name": "src/app/race/race.component.spec.ts", "hash": "334ed6742f6a925c76a622c0460bab1a5463f7596480f6adb73237b71985aebc" },
-    { "name": "cypress/e2e/home.cy.ts", "hash": "2e8d32557486f534c1317ac344f93a2350ff89b73ee7817f92626f0d08bd3a89" }
-  ]
-}
+{"pack":"64","id":7,"title":"Custom pipe with date-fns","specs":[{"name":"src/app/from-now.pipe.spec.ts","hash":"c4b7b06273ed33bf4b1791a5cdb32639cfb01b8c07440ab60a5b3d50f84d14d5"},{"name":"src/app/race/race.component.spec.ts","hash":"2e290d14b3f7ff424bbf9f5fa7fca76fc217562680e2a10e407fec6ea71a1022"},{"name":"cypress/e2e/home.cy.ts","hash":"34a01d0d417f34636c40acf9b537a871f7c38ce6ab5b0d2b175ee874a4d36b72"}]}
