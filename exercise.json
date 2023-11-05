@@ -1,1 +1,9 @@
-{"pack":"64","id":5,"title":"Pony component","specs":[{"name":"src/app/race/race.component.spec.ts","hash":"3e133f83434ec9c70203c09c5ce91da17404d63f5e25620f2d2a13a6c5ac8921"},{"name":"src/app/pony/pony.component.spec.ts","hash":"d1be886aa3b9248368f959baa3db9be2f41877fac0acc9cf694209535ad9ea34"},{"name":"cypress/e2e/home.cy.ts","hash":"5971bef1f1050206d650d2654938e30c8c2a5d46ccb3bf44d6276adf4468a0d4"}]}
+{
+  "pack": "64",
+  "id": 6,
+  "title": "Using pipes",
+  "specs": [
+    { "name": "src/app/race/race.component.spec.ts", "hash": "334ed6742f6a925c76a622c0460bab1a5463f7596480f6adb73237b71985aebc" },
+    { "name": "cypress/e2e/home.cy.ts", "hash": "2e8d32557486f534c1317ac344f93a2350ff89b73ee7817f92626f0d08bd3a89" }
+  ]
+}
