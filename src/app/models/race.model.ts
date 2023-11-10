@@ -1,6 +1,6 @@
 import { PonyModel } from './pony.model';
 
-export default interface RaceModel {
+export interface RaceModel {
   id: number;
   name: string;
   ponies: PonyModel[];
