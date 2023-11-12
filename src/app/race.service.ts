@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RaceModel } from './models/race.model';
+import { of, delay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,6 @@ export class RaceService {
   ];
 
   list() {
-    return this.races;
+    return of(this.races).pipe(delay(500));
   }
 }
