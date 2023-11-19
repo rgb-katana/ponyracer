@@ -31,7 +31,7 @@ export class RegisterComponent {
       confirmPassword: this.confirmPasswordCtrl
     },
     {
-      validators: [RegisterComponent.passwordMatch]
+      validators: RegisterComponent.passwordMatch
     }
   );
 
@@ -50,35 +50,15 @@ export class RegisterComponent {
   static passwordMatch(formGroup: FormGroup) {
     const password = formGroup.get('password')!.value;
     const confirmPassword = formGroup.get('confirmPassword')!.value;
-
-    if (password !== confirmPassword) {
-      return { matchingError: true };
-    }
-    return null;
+    return password !== confirmPassword ? { matchingError: true } : null;
   }
 
   register() {
-    const login = this.userForm.get('login')?.value;
-    const birthYear = this.userForm.get('birthYear')?.value;
-    const password = this.userForm.get('passwordForm.password')?.value;
-    console.log('called');
+    const formValue = this.userForm.value;
 
-    if (
-      login !== null &&
-      login !== undefined &&
-      birthYear !== null &&
-      birthYear !== undefined &&
-      password !== null &&
-      password !== undefined
-    ) {
-      this.userService.register(login, password, birthYear).subscribe(
-        response => {
-          this.router.navigateByUrl('/');
-        },
-        err => {
-          this.registrationFailed = true;
-        }
-      );
-    }
+    this.userService.register(formValue.login!, formValue.passwordForm.password!, formValue.birthYear!).subscribe({
+      next: () => this.router.navigateByUrl('/'),
+      error: () => (this.registrationFailed = true)
+    });
   }
 }
