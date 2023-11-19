@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RaceService {
-  constructor(private http: HttpClient) {}
-
   BASE_URL = 'https://ponyracer.ninja-squad.com';
+
+  constructor(private http: HttpClient) {}
 
   params = {
     status: 'PENDING'

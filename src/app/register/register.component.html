@@ -3,16 +3,29 @@
     <label for="login" class="form-label" id="login-label">Login</label>
     <input id="login" class="form-control" formControlName="login" type="text" />
     <div *ngIf="loginCtrl.dirty && loginCtrl.hasError('required')">Login is required</div>
+    <div *ngIf="loginCtrl.touched && loginCtrl.hasError('minlength')" id="login-length-error">
+      Your login should be at least 3 characters
+    </div>
   </div>
-  <div class="mb-3">
+  <div class="mb-3" formGroupName="passwordForm">
     <label for="password" class="form-label" id="password-label">Password</label>
     <input id="password" class="form-control" formControlName="password" type="password" />
     <div *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">Password is required</div>
+    <label for="confirm-password" class="form-label" id="confirm-password-label">Confirm password</label>
+    <input id="confirm-password" class="form-control" formControlName="confirmPassword" type="password" />
+    <div *ngIf="confirmPasswordCtrl.dirty && confirmPasswordCtrl.hasError('required')">Confirming password is required</div>
+    <div *ngIf="passwordGroup.hasError('matchingError') && passwordCtrl.dirty && confirmPasswordCtrl.dirty" id="password-matching-error">
+      Your password does not match
+    </div>
   </div>
   <div class="mb-3">
-    <label for="birthYear" class="form-label" id="birthYear-label">Login</label>
+    <label for="birthYear" class="form-label" id="birthYear-label">Birth year</label>
     <input id="birthYear" class="form-control" formControlName="birthYear" type="number" />
     <div *ngIf="birthYearCtrl.dirty && birthYearCtrl.hasError('required')">Birth year is required</div>
+    <div *ngIf="birthYearCtrl.hasError('min') || birthYearCtrl.hasError('max')" id="invalid-year-error">This is not a valid year</div>
+  </div>
+  <div class="mb-3">
+    <div *ngIf="registrationFailed" id="registration-error">Try again with another login.</div>
   </div>
   <button type="submit" [disabled]="userForm.invalid">Let's go!</button>
 </form>
