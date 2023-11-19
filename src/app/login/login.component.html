@@ -1,0 +1,23 @@
+<div class="row">
+  <h1>Log in</h1>
+
+  <div *ngIf="authenticationFailed" class="alert alert-danger">
+    <button type="button" class="btn-close" aria-label="Close" (click)="authenticationFailed = false"></button>
+    Nope, try again
+  </div>
+
+  <form (ngSubmit)="authenticate()" #loginForm="ngForm">
+    <div class="mb-3">
+      <label for="login" class="form-label" id="login-label">Login</label>
+      <input id="login" class="form-control" type="text" name="login" required [(ngModel)]="credentials.login" />
+      <div *ngIf="loginForm.form.controls.login?.invalid && loginForm.form.controls.login?.dirty">Login is required</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label" id="login-label">Password</label>
+      <input id="password" class="form-control" type="password" name="password" required [(ngModel)]="credentials.password" />
+      <div *ngIf="loginForm.form.controls.password?.invalid && loginForm.form.controls.password?.dirty">Password is required</div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Authenticate</button>
+  </form>
+</div>
