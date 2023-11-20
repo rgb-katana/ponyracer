@@ -1,13 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter, RouterLink } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { Subject } from 'rxjs';
 
 import { MenuComponent } from './menu.component';
+import { UserService } from '../user.service';
+import { UserModel } from '../models/user.model';
 
 describe('MenuComponent', () => {
+  const userService = { userEvents: new Subject<UserModel>() } as UserService;
+
   beforeEach(() =>
     TestBed.configureTestingModule({
-      providers: [provideRouter([])]
+      providers: [provideRouter([]), { provide: UserService, useValue: userService }]
     })
   );
 
@@ -68,5 +73,42 @@ describe('MenuComponent', () => {
 
     const links = fixture.debugElement.queryAll(By.directive(RouterLink));
     expect(links.length).withContext('You should have two routerLink: one to the races, one to the home').toBe(2);
+  });
+
+  it('should listen to userEvents', () => {
+    const fixture = TestBed.createComponent(MenuComponent);
+
+    const user = { login: 'cedric', money: 200 } as UserModel;
+
+    userService.userEvents.next(user);
+
+    expect(fixture.componentInstance.user).withContext('Your component should listen to the `userEvents` observable').toBe(user);
+  });
+
+  it('should display the user if logged', () => {
+    const fixture = TestBed.createComponent(MenuComponent);
+    fixture.detectChanges();
+
+    const component = fixture.componentInstance;
+    component.user = { login: 'cedric', money: 200 } as UserModel;
+
+    fixture.detectChanges();
+
+    const element = fixture.nativeElement;
+    const info = element.querySelector('#current-user');
+    expect(info).withContext('You should have a `span` element with the ID `current-user` to display the user info').not.toBeNull();
+    expect(info.textContent).withContext('You should display the name of the user in a `span` element').toContain('cedric');
+    expect(info.textContent).withContext('You should display the score of the user in a `span` element').toContain('200');
+  });
+
+  it('should unsubscribe on destruction', () => {
+    const userService = TestBed.inject(UserService);
+    const fixture = TestBed.createComponent(MenuComponent);
+    expect(userService.userEvents.observed).withContext('You need to subscribe to userEvents when the component is created').toBeTrue();
+    fixture.destroy();
+
+    expect(userService.userEvents.observed)
+      .withContext('You need to unsubscribe from userEvents when the component is destroyed')
+      .toBeFalse();
   });
 });
