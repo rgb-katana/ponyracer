@@ -3,6 +3,7 @@
 </div>
 
 <div class="text-center d-flex justify-content-center flex-row gap-2">
-  <a class="btn btn-primary" routerLink="/login">Login</a>
-  <a class="btn btn-primary" routerLink="/register">Register</a>
+  <a class="btn btn-primary" routerLink="/races" *ngIf="user">Races</a>
+  <a class="btn btn-primary" routerLink="/login" *ngIf="!user">Login</a>
+  <a class="btn btn-primary" routerLink="/register" *ngIf="!user">Register</a>
 </div>

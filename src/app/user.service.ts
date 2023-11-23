@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserModel } from './models/user.model';
-import { Observable, Subject, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   BASE_URL = 'https://ponyracer.ninja-squad.com';
-  userEvents = new Subject<UserModel>();
+  userEvents = new BehaviorSubject<UserModel | null>(null);
 
   constructor(private http: HttpClient) {}
 
