@@ -1,10 +1,1 @@
-{
-  "pack": "64",
-  "id": 18,
-  "title": "Logged home",
-  "specs": [
-    { "name": "src/app/menu/menu.component.spec.ts", "hash": "f62bb0ca4ceaaec344061dbcb77f632b58ed3c85151f70ac6fee04c5fe7e51d0" },
-    { "name": "src/app/home/home.component.spec.ts", "hash": "a39a426a5cf441b48d983177509abd29efd790045100d3a259e5aafb46ecfaba" },
-    { "name": "cypress/e2e/home.cy.ts", "hash": "d19b655854c47688bef15e04ac2a929f586fdfd492a4b5c27f369e98eaafe340" }
-  ]
-}
+{"pack":"64","id":19,"title":"Remember me","specs":[{"name":"src/app/user.service.spec.ts","hash":"c651db6cba7cf7c8df43afc3a04be0793bc9fd649a709be348441a7081eea740"},{"name":"cypress/e2e/home.cy.ts","hash":"0c6d70a20efeb3e6895f385e221f355166a994cf4e86f5c3024797639ecf568f"}]}
