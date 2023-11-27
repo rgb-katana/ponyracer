@@ -36,4 +36,9 @@ export class UserService {
       .post<UserModel>(`${this.BASE_URL}/api/users/authentication`, credentials)
       .pipe(tap((user: UserModel) => this.storeLoggedInUser(user)));
   }
+
+  logout() {
+    this.userEvents.next(null);
+    window.localStorage.removeItem('rememberMe');
+  }
 }
